@@ -1,12 +1,29 @@
-
 import './App.css';
+import React from 'react'
+import routes from './Routes/index'
+import {  BrowserRouter as Router, Routes, Route}  from "react-router-dom";
 
-function App() {
+const App = () => {
   return (
     <div>
-      <p  className='text-red-500'>Kiet lt</p>
+        <Router>
+        <Routes>
+          {routes.map((route) => {
+            const Page = route.page;
+            return (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={
+                   <Page />
+                }
+              />
+            );
+          })}
+        </Routes>
+      </Router>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
