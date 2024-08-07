@@ -1,16 +1,29 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import Input from "../Components/Form/Input";
 import Button from "../Components/Form/Button";
 import { Link } from "react-router-dom";
 import bg from "../Assets/login-form-image.jpg";
+import * as request from "../Until/Request";
 
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    const email=data.email;
+    const password=data.password;
+    try {
+      const res = await request.post("http://localhost:8080/user/login",{
+        email,
+        password
+      })
+      const username=res.data.username;
+      alert("Đăng nhập thành công chào mừng: "+username);
+    } catch (error) {
+      console.log(error.response.data)
+    }
+    
   };
+
 
   return (
     <div
