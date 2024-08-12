@@ -1,6 +1,7 @@
 import React from "react";
 import TripCard from '../Components/TripCard/TripCard'
 import { SmallFilledButton } from "../../../../Components/Buttons";
+import BarSearchComponent from "./BarSearchComponent";
 
 function UpcomingTrips() {
   return (
@@ -11,6 +12,9 @@ function UpcomingTrips() {
           <div className="rounded-full px-3 py-1 text-center bg-black text-white">
             <p className="text-lg font-bold">3</p>
           </div>
+        </div>
+        <div>
+          <BarSearchComponent/>
         </div>
         <div>
           <SmallFilledButton title={"Plan a New Trip"} />
