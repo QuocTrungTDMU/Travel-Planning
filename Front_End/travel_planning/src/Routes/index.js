@@ -1,6 +1,7 @@
-import HomePage from "../Pages/HomePage";
-import Login from "../Pages/Login";
-import SignUp from '../Pages/SignUp.jsx'
+import HomePage from "../Pages/Client/HomePage.jsx";
+import Login from "../Pages/Client/Login.jsx";
+import ProductPage from "../Pages/Client/ProductPage/ProductPage.jsx";
+import SignUp from '../Pages/Client/SignUp.jsx'
 
 export const routes = [
     {
@@ -16,6 +17,11 @@ export const routes = [
     {
         path: '/signup',
         page: SignUp,
+       // isShowHeader: true,
+    },
+    {
+        path: '/product-page',
+        page: ProductPage,
        // isShowHeader: true,
     },
 ]

@@ -1,14 +1,14 @@
 import React from "react";
 import { useForm } from 'react-hook-form';
 import { Link } from "react-router-dom";
-import Input from '../Components/Form/Input';
-import Button from '../Components/Form/Button';
-import AvatarInput from '../Components/Form/AvatarInput';
-import PhoneNumberInput from '../Components/Form/PhoneNumberInput';
+import Input from '../../Components/Form/Input';
+import Button from '../../Components/Form/Button';
+import AvatarInput from '../../Components/Form/AvatarInput';
+import PhoneNumberInput from '../../Components/Form/PhoneNumberInput';
 
-import  PageHeader  from "../Components/Header/PageHeader";
+import  PageHeader  from "../../Components/Header/PageHeader";
 
-import bg from '../Assets/SignUpImage.jpeg'
+import bg from '../../Assets/SignUpImage.jpeg'
 
 const Signup = () => {
   const {

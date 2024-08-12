@@ -1,9 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import Input from "../Components/Form/Input";
-import Button from "../Components/Form/Button";
+import Input from "../../Components/Form/Input";
+import Button from "../../Components/Form/Button";
 import { Link } from "react-router-dom";
-import bg from "../Assets/login-form-image.jpg";
+import bg from "../../Assets/login-form-image.jpg";
 
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
