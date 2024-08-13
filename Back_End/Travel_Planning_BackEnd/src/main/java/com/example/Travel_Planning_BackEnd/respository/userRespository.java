@@ -4,8 +4,11 @@ import com.example.Travel_Planning_BackEnd.entity.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface userRespository extends JpaRepository<Users,String> {
     Users findByUsername(String Username);
     Users findByEmail(String Email);
+    Optional<Users> findById(String id);
 }
