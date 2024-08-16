@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const NavBarComponent = () => {
-  // State to track the active menu item
-  const [activeItem, setActiveItem] = useState('home');
+  const [activeItem, setActiveItem] = useState("home");
 
-  // Function to handle menu item click
   const handleMenuItemClick = (item) => {
     setActiveItem(item);
+  };
+
+  const handleSelectChange = (e) => {
+    const selectedItem = e.target.value;
+    setActiveItem(selectedItem);
+
+    // window.location.href = `#${selectedItem}`; // de navigator sang trang can thiet
   };
 
   return (
@@ -15,7 +20,7 @@ const NavBarComponent = () => {
       <div className="relative w-full">
         <div className="container mx-auto relative z-10">
           <nav className="bg-white shadow-lg py-4 px-6 lg:px-12 flex justify-between items-center">
-            <a href="#" className="text-2xl font-bold text-primary">
+            <a href="/" className="text-2xl font-bold text-primary">
               <h1 className="m-0 text-primary text-[#7AB730]">
                 <span className="text-black">TRAVEL</span>ER
               </h1>
@@ -25,83 +30,104 @@ const NavBarComponent = () => {
             </button>
             <div className="hidden lg:flex space-x-6">
               <a
-                href="#"
-                onClick={() => handleMenuItemClick('home')}
-                className={`text-gray-800 ${activeItem === 'home' ? 'text-primary font-bold text-[#7AB730]' : 'hover:text-primary'}`}
+                href="/"
+                onClick={() => handleMenuItemClick("home")}
+                className={`text-primary ${
+                  activeItem === "home"
+                    ? "font-bold text-[#7AB730]"
+                    : "hover:text-primary"
+                }`}
               >
                 Home
               </a>
               <a
                 href="#"
-                onClick={() => handleMenuItemClick('about')}
-                className={`text-gray-800 ${activeItem === 'about' ? 'text-primary font-bold text-[#7AB730]' : 'hover:text-primary'}`}
+                onClick={() => handleMenuItemClick("about")}
+                className={`text-primary ${
+                  activeItem === "about"
+                    ? "font-bold text-[#7AB730]"
+                    : "hover:text-primary"
+                }`}
               >
                 About
               </a>
               <a
                 href="#"
-                onClick={() => handleMenuItemClick('services')}
-                className={`text-primary ${activeItem === 'services' ? 'font-bold text-[#7AB730]' : 'hover:text-primary'}`}
+                onClick={() => handleMenuItemClick("services")}
+                className={`text-primary ${
+                  activeItem === "services"
+                    ? "font-bold text-[#7AB730]"
+                    : "hover:text-primary"
+                }`}
               >
                 Services
               </a>
               <a
                 href="#"
-                onClick={() => handleMenuItemClick('tour-packages')}
-                className={`text-gray-800 ${activeItem === 'tour-packages' ? 'text-primary font-bold text-[#7AB730]' : 'hover:text-primary'}`}
+                onClick={() => handleMenuItemClick("package")}
+                className={`text-primary ${
+                  activeItem === "package"
+                    ? "font-bold text-[#7AB730]"
+                    : "hover:text-primary"
+                }`}
               >
                 Tour Packages
               </a>
-              <div className="relative">
-              <a
-                href="#"
-                onClick={() => handleMenuItemClick('pages')}
-                className={`text-gray-800 ${activeItem === 'pages' ? 'text-primary font-bold text-[#7AB730]' : 'hover:text-primary'}`}
+
+              {/* Select for Pages */}
+              <select
+                value={activeItem}
+                onChange={handleSelectChange}
+                className="text-gray-800 hover:text-primary cursor-pointer appearance-none bg-transparent relative pl-3 pr-8"
+                // onClick={() => handleMenuItemClick('page')}
+                // className={`text-primary ${activeItem === 'page' ? 'font-bold text-[#7AB730]' : 'hover:text-primary'}`}
+                style={{
+                  backgroundImage: `url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" fill="%237AB730" width="24" height="24" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>')`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "right 1px center",
+                  backgroundSize: "16px",
+                }}
               >
-                Pages
-              </a>
-                <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg hidden group-hover:block">
-                  <a
-                    href="#"
-                    onClick={() => handleMenuItemClick('blog-grid')}
-                    className={`block px-4 py-2 ${activeItem === 'blog-grid' ? 'text-primary font-bold text-[#7AB730]' : 'text-gray-800 hover:bg-gray-100'}`}
-                  >
-                    Blog Grid
-                  </a>
-                  <a
-                    href="#"
-                    onClick={() => handleMenuItemClick('blog-detail')}
-                    className={`block px-4 py-2 ${activeItem === 'blog-detail' ? 'text-primary font-bold text-[#7AB730]' : 'text-gray-800 hover:bg-gray-100'}`}
-                  >
-                    Blog Detail
-                  </a>
-                  <a
-                    href="#"
-                    onClick={() => handleMenuItemClick('destination')}
-                    className={`block px-4 py-2 ${activeItem === 'destination' ? 'text-primary font-bold text-[#7AB730]' : 'text-gray-800 hover:bg-gray-100'}`}
-                  >
-                    Destination
-                  </a>
-                  <a
-                    href="#"
-                    onClick={() => handleMenuItemClick('travel-guides')}
-                    className={`block px-4 py-2 ${activeItem === 'travel-guides' ? 'text-primary font-bold text-[#7AB730]' : 'text-gray-800 hover:bg-gray-100'}`}
-                  >
-                    Travel Guides
-                  </a>
-                  <a
-                    href="#"
-                    onClick={() => handleMenuItemClick('testimonial')}
-                    className={`block px-4 py-2 ${activeItem === 'testimonial' ? 'text-primary font-bold text-[#7AB730]' : 'text-gray-800 hover:bg-gray-100'}`}
-                  >
-                    Testimonial
-                  </a>
-                </div>
-              </div>
+                <option value="pages">Pages</option>
+                <option
+                  value="blog-grid"
+                  className="hover:bg-[#7AB730] hover:text-white"
+                >
+                  Blog Grid
+                </option>
+                <option
+                  value="blog-detail"
+                  className="hover:bg-[#7AB730] hover:text-white"
+                >
+                  Blog Detail
+                </option>
+                <option
+                  value="destination"
+                  className="hover:bg-[#7AB730] hover:text-white"
+                >
+                  Destination
+                </option>
+                <option
+                  value="travel-guides"
+                  className="hover:bg-[#7AB730] hover:text-white"
+                >
+                  Travel Guides
+                </option>
+                <option
+                  value="testimonial"
+                  className="hover:bg-[#7AB730] hover:text-white"
+                >
+                  Testimonial
+                </option>
+              </select>
               <a
                 href="#"
-                onClick={() => handleMenuItemClick('contact')}
-                className={`text-gray-800 ${activeItem === 'contact' ? 'text-primary font-bold text-[#7AB730]' : 'hover:text-primary'}`}
+                onClick={() => handleMenuItemClick("contact")}
+                className={`text-primary ${
+                  activeItem === "contact"
+                    ? "font-bold text-[#7AB730]"
+                    : "hover:text-primary"
+                }`}
               >
                 Contact
               </a>
@@ -112,6 +138,6 @@ const NavBarComponent = () => {
       {/* Navbar End */}
     </div>
   );
-}
+};
 
 export default NavBarComponent;
