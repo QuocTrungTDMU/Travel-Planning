@@ -4,7 +4,7 @@ const BarSearchComponent = () => {
     return (
         <div>
             <div class='flex items-center justify-center '>
-                <div class="flex rounded-full bg-[#0d1829] px-2 w-[800px] ">
+                <div class="flex rounded-full bg-[#0d1829] px-2 w-[400px] ">
                     <input
                         type="text"
                         class="w-full bg-[#0d1829] flex bg-transparent pl-2 text-[#cccccc] outline-0"
