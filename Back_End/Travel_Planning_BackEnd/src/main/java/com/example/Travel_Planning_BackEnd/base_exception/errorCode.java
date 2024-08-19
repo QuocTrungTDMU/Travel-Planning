@@ -4,6 +4,7 @@ public enum errorCode {
     USER_NOT_FOUND(1000,"User Not Found"),
     EMAIL_USER_ALREADY_EXIST(999,"Email User Already Exist"),
     NOT_FOUND_TOUR_BY_NAME(998,"Not Found Tour By Name"),
+    CREATE_REIVEW_FAILED(997,"Create Reivew Failed"),
     ;
     int idCode;
     String message;
