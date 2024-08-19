@@ -5,7 +5,7 @@ const FooterComponent = () => {
             <div className="flex flex-wrap pt-5">
                 <div className="w-full lg:w-1/4 mb-5">
                     <a
-                        href="#"
+                        href="/"
                         className="text-3xl font-bold text-primary flex items-center"
                     >
                         <h1 className="text-[#7AB730]">
@@ -97,7 +97,7 @@ const FooterComponent = () => {
                         ].map((service, index) => (
                             <a
                                 key={index}
-                                href="#"
+                                href="/"
                                 className="text-white-50 mb-2 flex items-center hover:underline"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="0.5em" height="1em" viewBox="0 0 256 512" className="mr-2">
@@ -128,7 +128,7 @@ const FooterComponent = () => {
                         ].map((link, index) => (
                             <a
                                 key={index}
-                                href="#"
+                                href="/"
                                 className="text-white-50 mb-2 flex items-center hover:underline"
                             >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="0.5em" height="1em" viewBox="0 0 256 512" className="mr-2"   ><path fill="currentColor" d="m224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4l-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34 "></path></svg>
@@ -213,14 +213,14 @@ const FooterComponent = () => {
                 <div className="flex flex-col lg:flex-row justify-between items-center">
                     <p className="text-center lg:text-left mb-3 lg:mb-0 text-slate-300">
                         Copyright &copy;{" "}
-                        <a href="#" className="text-white">
+                        <a href="/" className="text-white">
                             Domain
                         </a>
                         . All Rights Reserved.
                     </p>
                     <p className="text-center lg:text-right text-slate-300 ">
                         Designed by{" "}
-                        <a href="" className="text-white">
+                        <a href="/" className="text-white">
                             Trung Panther
                         </a>
                     </p>
