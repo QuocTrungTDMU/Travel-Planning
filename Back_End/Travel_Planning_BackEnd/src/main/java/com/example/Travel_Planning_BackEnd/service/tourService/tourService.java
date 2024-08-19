@@ -6,10 +6,9 @@ import com.example.Travel_Planning_BackEnd.entity.Tours;
 import com.example.Travel_Planning_BackEnd.respository.tourRespository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.example.Travel_Planning_BackEnd.dto.response.tourProjection;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class tourService implements tourServiceImp {
@@ -33,5 +32,9 @@ public class tourService implements tourServiceImp {
             return resTours;
         }
         throw new appException(errorCode.NOT_FOUND_TOUR_BY_NAME);
+    }
+    public List<tourProjection> getItemstours(){
+        List<tourProjection> res = tourRespository.getTourItems();
+        return res;
     }
 }

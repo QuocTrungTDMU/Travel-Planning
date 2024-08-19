@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.util.List;
+
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,4 +19,7 @@ public class Tours {
     String tourName;
     String description;
     int price;
+    int day;
+    int person;
+    String country;
 }

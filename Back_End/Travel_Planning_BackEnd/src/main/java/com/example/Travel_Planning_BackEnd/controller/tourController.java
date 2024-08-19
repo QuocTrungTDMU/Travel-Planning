@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.Mapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+import com.example.Travel_Planning_BackEnd.dto.response.apiResponse;
 @RestController
 public class tourController {
     @Autowired
@@ -31,6 +31,17 @@ public class tourController {
         apiResponse.setMessage("get tours successfully");
         apiResponse.setCode(HttpStatus.OK.value());
         apiResponse.setData(service.getToursByName(keyword));
+        return ResponseEntity.status(HttpStatus.OK).body(
+                apiResponse
+        );
+    }
+    @GetMapping("tours/getItem")
+    public ResponseEntity<apiResponse> getAllItemTours() {
+        apiResponse apiResponse= com.example.Travel_Planning_BackEnd.dto.response.apiResponse.builder().build().builder()
+                .code(HttpStatus.OK.value())
+                .message("getItem successfully")
+                .data(service.getItemstours())
+                .build();
         return ResponseEntity.status(HttpStatus.OK).body(
                 apiResponse
         );
